@@ -1,7 +1,7 @@
 import WordPullUp from "../../components/ui/word-pull-up";
 import MorphingText from "../../components/ui/morphing-text";
-import { Vortex } from "../../components/ui/vortex";
 import Link from "next/link";
+import { SparklesCore } from "../../components/ui/sparkles";
 import { MagicButton } from "../../components/ui/button"
 
 const texts = [
@@ -16,19 +16,26 @@ export function MorphingTextDemo() {
 
 export default function Hero() {
   return (
-    <div className="w-full mx-auto rounded-md  h-screen overflow-hidden" id="home">
-      <Vortex
-        backgroundColor="black"
-        // rangeY={100}
-        particleCount={1000}
-        baseSpeed={10}
-        rangeSpeed={20}
-        className="flex items-center flex-col justify-center px-2 md:px-10 py-4 w-full h-full"
-      >
-        <h2 className="text-slate-200 font-bold text-center text-[10px] md:text-sm" >
-            Personal Portofolio
+    <div className="h-screen w-full bg-black flex flex-col items-center justify-center relative overflow-hidden rounded-md">
+      {/* Sparkles sebagai background */}
+      <div className="w-full absolute inset-0 h-full">
+        <SparklesCore
+          id="tsparticlesfullpages2"
+          background="transparent"
+          minSize={0.4}
+          maxSize={1}
+          particleDensity={200}
+          className="h-full"
+          particleColor="#60AFFF"
+        />
+      </div>
+
+      {/* Hero Section */}
+      <div className="text-center"> {/* Gunakan z-10 agar konten tetap di atas background */}
+        <h2 className="text-slate-200 font-bold text-[10px] md:text-sm">
+          Personal Portofolio
         </h2>
-        <h1 className="heading text-6xl md:text-9xl font-bold text-center tracking-wide">
+        <h1 className="heading text-6xl md:text-9xl font-bold tracking-wide">
           Marcelino
         </h1>
         <WordPullUp
@@ -38,17 +45,11 @@ export default function Hero() {
         <MorphingTextDemo />
         <Link href="#contact">
           <MagicButton
-                title="Contact me"
-              />
+            title="Contact me"
+          />
         </Link>
-
-
-        {/* <Button variant="outline"
-          className=""
-        >
-          Contact me
-        </Button> */}
-      </Vortex>
+      </div>
     </div>
   );
 }
+
