@@ -22,10 +22,6 @@ export default function RootLayout({
   
   return (
     <html lang="en" className="scroll-smooth">
-            <head>
-        {/* Menambahkan favicon di sini */}
-        <link rel="icon" href="/favicon.ico" />
-      </head>~
       <body
         className={poppins.variable}
       >
