@@ -2,7 +2,7 @@ import WordPullUp from "../../components/ui/word-pull-up";
 import MorphingText from "../../components/ui/morphing-text";
 import { Vortex } from "../../components/ui/vortex";
 import Link from "next/link";
-import { Button, MagicButton } from "../../components/ui/button"
+import { MagicButton } from "../../components/ui/button"
 
 const texts = [
   "Front End Developer",

@@ -1,4 +1,4 @@
-import { HoverEffect, Card } from "../../components/ui/card-hover-effect";
+import { HoverEffect} from "../../components/ui/card-hover-effect";
 import { SparklesCore } from "../../components/ui/sparkles";
 export default function Certificate() {
   return (

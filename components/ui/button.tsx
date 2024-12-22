@@ -12,10 +12,6 @@ export const MagicButton = ({
   title: string;
   otherClasses?: string;
 }) => {
-  // Fungsi default handleClick jika tidak diberikan oleh parent
-  const defaultHandleClick = () => {
-      window.location.hash = 'contact';
-  };
   return (
     <div
       className="relative inline-flex h-12  w-auto overflow-hidden rounded-2xl p-[1px] focus:outline-none sm:w-44 md:mt-4"

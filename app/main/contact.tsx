@@ -22,10 +22,10 @@ export default function Contact() {
             data-aos="fade"
             id="contact"
           >
-            Got Ideas? Let’s Talk!
+            Got Ideas? Let&apos;s Talk!
           </h1>
           <p className="text-center text-slate-200" data-aos="fade">
-            Always excited about fresh opportunities. Let’s connect if you'd
+            Always excited about fresh opportunities. Let&apos;s connect if you'd
             like to work together!
           </p>
 

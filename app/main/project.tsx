@@ -8,7 +8,14 @@ import { SparklesCore } from "../../components/ui/sparkles";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-function Card({ title, desc, image, linkGithub, stack }: any) {
+interface CardProps {
+  title: string;
+  desc: string;
+  image: string;
+  linkGithub: string;
+  stack: string[];
+}
+function Card({ title, desc, image, linkGithub, stack }: CardProps) {
   return (
     <div
       data-aos="fade-up"
