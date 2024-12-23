@@ -72,7 +72,7 @@ export default function Projects() {
   return (
     <div className="relative h-full w-full bg-black flex flex-col items-center justify-center overflow-hidden rounded-md">
       <div className="w-full absolute inset-0 h-full">
-        <SparklesCore
+        {/* <SparklesCore
           id="tsparticlesfullpages"
           background="transparent"
           minSize={0.4}
@@ -80,7 +80,7 @@ export default function Projects() {
           particleDensity={200}
           className="h-full"
           particleColor="#60AFFF"
-        />
+        /> */}
       </div>
 
       <div className="max-w-screen-xl px-6 md:px-10 mx-auto" id="about">

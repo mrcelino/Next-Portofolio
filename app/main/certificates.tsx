@@ -3,7 +3,7 @@ import { SparklesCore } from "../../components/ui/sparkles";
 export default function Certificate() {
   return (
     <div className="h-full relative w-full bg-black flex flex-col items-center justify-center overflow-hidden rounded-md">
-      <div className="w-full absolute inset-0 h-full">
+      {/* <div className="w-full absolute inset-0 h-full">
         <SparklesCore
           id="tsparticlesfullpages3"
           background="transparent"
@@ -13,7 +13,7 @@ export default function Certificate() {
           className="h-full"
           particleColor="#60AFFF"
         />
-      </div>
+      </div> */}
 
       <div className="max-w-screen-xl px-6 md:px-10 mx-auto" id="about">
         <h1
@@ -46,9 +46,15 @@ export const projects = [
   },
   {
     title: "Codepolitan",
-    description: "React.js: Exploring Components",
+    description: "ReactJS: Exploring Components",
     url: "/images/komponen.png",
     link: "https://www.codepolitan.com/c/L37MT9V/",
+  },
+  {
+    title: "Codepolitan",
+    description: "ReactJS: State Management",
+    url: "/images/reactstate.png",
+    link: "https://www.codepolitan.com/c/CDN6NI5/",
   },
   {
     title: "Codepolitan",
