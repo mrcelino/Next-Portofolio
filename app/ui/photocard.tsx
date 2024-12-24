@@ -13,7 +13,7 @@ export default function PhotoCard() {
           src="/images/foto.jpg"
           height="1000"
           width="1000"
-          className="md:h-96 w-full object-contain group-hover/card:shadow-xl rounded-xl"
+          className="lg:h-96 w-full object-contain group-hover/card:shadow-xl rounded-xl"
           alt="thumbnail"
         />
       </CardItem>
