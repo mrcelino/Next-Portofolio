@@ -97,7 +97,6 @@ export const projects = [
     desc: "Ramadhan di Kampus UGM Offical Website including an RDK Quest Game, daily menu, event schedule, and article.",
     image: "/images/rdk.png",
     web:"https://js.ugm.ac.id/rdk",
-    linkGithub: "https://github.com/mrcelino/avesta-project",
     stack: ["Next.js", "React","Typescript","Tailwind"],
   },
   {
@@ -106,6 +105,20 @@ export const projects = [
     image: "/images/avesta.png",
     linkGithub: "https://github.com/mrcelino/Avesta-V2",
     stack: ["Laravel", "React","Typescript","Tailwind"],
+  },
+  {
+    title: "Web Portofolio",
+    desc: "My personal web portfolio built with Next.js, TypeScript, React, Tailwind CSS, displaying my projects, skills, and a contact section.",
+    image: "/images/porto.png",
+    linkGithub: "https://github.com/mrcelino/Next-Portofolio",
+    stack: ["Next.js", "React","Tailwind"],
+  },
+  {
+    title: "Catatan Belanja",
+    desc: "A simple app to manage shopping list, allowing users to add items, mark them as purchased, and sort by input order.",
+    image: "/images/belanja.png",
+    linkGithub: "https://github.com/mrcelino/React-CatatanBelanja",
+    stack: ["React"],
   },
   {
     title: "Nobur",
@@ -121,6 +134,7 @@ export const projects = [
     linkGithub: "https://github.com/mrcelino/PPPB-UAS-GoEvent",
     stack: ["Kotlin", "MongoDB"],
   },
+
 ];
 
 

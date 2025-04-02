@@ -1,9 +1,9 @@
 "use client";
 import Image from "next/image";
-import { projects } from "../../data/data"; // import data projects dari data.tsx
+import { projects } from "../../data/data";
 import React, { useEffect } from "react";
 import { BorderBeam } from "../../components/ui/border-beam";
-import { FaGithub } from "react-icons/fa";
+import { FaGithub, FaGlobe } from "react-icons/fa";
 import { SparklesCore } from "../../components/ui/sparkles";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -12,10 +12,18 @@ interface CardProps {
   title: string;
   desc: string;
   image: string;
+  web: string;
   linkGithub: string;
   stack: string[];
 }
-function Card({ title, desc, image, linkGithub, stack }: CardProps) {
+
+function Card({ title, desc, image, linkGithub, stack, web }: CardProps) {
+  const hasWebLink = web && web.trim() !== "";
+  const link = hasWebLink ? web : linkGithub;
+  const buttonText = hasWebLink ? "Website" : "Github";
+  const Icon = hasWebLink ? FaGlobe : FaGithub;
+  const buttonColor = hasWebLink ? "bg-[#1E90FF] hover:shadow-blue-500/20" : "bg-[#24292e] hover:shadow-blue-900/20";
+
   return (
     <div
       data-aos="fade-up"
@@ -28,7 +36,7 @@ function Card({ title, desc, image, linkGithub, stack }: CardProps) {
           width={1920}
           height={1080}
           alt={title}
-          className="rounded-lg object-cover w-full h-full min-h-[192px]"
+          className="rounded-lg object-cover w-full h-[192px]"
         />
       </div>
       <div className="h-auto py-2 px-4">
@@ -45,12 +53,12 @@ function Card({ title, desc, image, linkGithub, stack }: CardProps) {
           ))}
         </div>
         <button
-          className="mt-4 align-middle flex flex-row items-center justify-center gap-2 w-full select-none font-sans font-semibold text-center transition-all text-sm py-3 px-6 rounded-lg bg-[#24292e] text-white shadow-md shadow-blue-900/10 hover:shadow-lg hover:shadow-blue-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
+          className={`mt-4 align-middle flex flex-row items-center justify-center gap-2 w-full select-none font-sans font-semibold text-center transition-all text-sm py-3 px-6 rounded-lg ${buttonColor} text-white shadow-md shadow-blue-900/10 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none`}
           type="button"
-          onClick={() => window.open(linkGithub)}
+          onClick={() => window.open(link)}
         >
-          <FaGithub size={20} />
-          Github
+          <Icon size={20} />
+          {buttonText}
         </button>
       </div>
       <BorderBeam
@@ -72,15 +80,15 @@ export default function Projects() {
   return (
     <div className="relative h-full w-full bg-black flex flex-col items-center justify-center overflow-hidden rounded-md">
       <div className="w-full absolute inset-0 h-full">
-        {/* <SparklesCore
+        <SparklesCore
           id="tsparticlesfullpages"
           background="transparent"
           minSize={0.4}
           maxSize={1}
-          particleDensity={200}
+          particleDensity={50}
           className="h-full"
           particleColor="#60AFFF"
-        /> */}
+        />
       </div>
 
       <div className="max-w-screen-xl px-6 md:px-10 mx-auto" id="about">
@@ -92,15 +100,15 @@ export default function Projects() {
           Projects
         </h1>
 
-        {/* Grid Container for Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
           {projects.map((project, index) => (
             <Card
+              web={project.web || ""}
               key={index}
               title={project.title}
               desc={project.desc}
               image={project.image}
-              linkGithub={project.linkGithub}
+              linkGithub={project.linkGithub || ""}
               stack={project.stack}
             />
           ))}
