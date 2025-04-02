@@ -4,7 +4,7 @@ import { SparklesCore } from "../../components/ui/sparkles";
 import { BorderBeam } from "../../components/ui/border-beam";
 function TechStack() {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-x-8 gap-y-2">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-x-8 gap-y-2">
       {techStack.map((tech) => (
         <div
           key={tech.id}
@@ -17,11 +17,11 @@ function TechStack() {
               <Image
                 width={100}
                 height={100}
-                src={tech.image} // Ambil dari data
-                alt={tech.name} // Ambil dari data
+                src={tech.image}
+                alt={tech.name}
               />
             </div>
-            {/* Border tambahan animasi opsional */}
+            {/* Border tambahan animasi */}
             <BorderBeam
               size={100}
               duration={12}
@@ -31,7 +31,6 @@ function TechStack() {
             />
           </div>
           <h2 className="mt-2 text-center font-bold text-white">{tech.name}</h2>{" "}
-          {/* Ambil dari data */}
         </div>
       ))}
     </div>
@@ -42,15 +41,15 @@ export default function Skills() {
   return (
     <div className="h-full relative w-full bg-black flex flex-col items-center justify-center overflow-hidden rounded-md">
       <div className="w-full absolute inset-0 h-full">
-        {/* <SparklesCore
+        <SparklesCore
           id="tsparticlesfullpagess2"
           background="transparent"
           minSize={0.4}
           maxSize={1}
-          particleDensity={200}
+          particleDensity={50}
           className="h-full"
           particleColor="#60AFFF"
-        /> */}
+        />
       </div>
 
       <div className="max-w-screen-xl px-6 md:px-10 mx-auto" id="about">

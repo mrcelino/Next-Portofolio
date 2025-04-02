@@ -67,6 +67,8 @@ export default {
   			}
   		},
   		colors: {
+				'custom-light': '#40C8D0',
+        'custom-dark': '#21666A',
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {

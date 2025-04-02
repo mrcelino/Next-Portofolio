@@ -11,7 +11,7 @@ const texts = [
 ];
 
 export function MorphingTextDemo() {
-  return <MorphingText texts={texts} className="mt-4 md:mt-0 text-sky-400 md:text-xl" />;
+  return <MorphingText texts={texts} className="mt-4 md:mt-0 text-sky-400 text-sm md:text-base" />;
 }
 
 export default function Hero() {
@@ -24,7 +24,7 @@ export default function Hero() {
           background="transparent"
           minSize={0.4}
           maxSize={1}
-          particleDensity={200}
+          particleDensity={100}
           className="h-full"
           particleColor="#60AFFF"
         />
@@ -35,12 +35,12 @@ export default function Hero() {
         <h2 className="text-slate-200 font-bold text-[10px] md:text-sm">
           Personal Portofolio
         </h2>
-        <h1 className="heading text-6xl md:text-9xl font-bold tracking-wide">
+        <h1 className="heading text-6xl md:text-9xl font-bold tracking-wider italic">
           Marcelino
         </h1>
         <WordPullUp
-          className="text-base mt-2 md:mt-0 md:text-3xl font-bold tracking-[-0.02em] text-white text-opacity-80 md:leading-[5rem]"
-          words="Crafting Innovative Solutions"
+          className="text-base mt-2 md:mt-0 md:text-xl font-bold tracking-[-0.02em] text-white text-opacity-80 md:leading-[5rem] italic"
+          words="Code Meets Tomorrow"
         />
         <MorphingTextDemo />
         <Link href="#contact">

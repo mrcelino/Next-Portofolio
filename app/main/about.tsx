@@ -10,7 +10,7 @@ export default function About() {
           background="transparent"
           minSize={0.4}
           maxSize={1}
-          particleDensity={120}
+          particleDensity={50}
           className="h-full"
           particleColor="#60AFFF"
         />
