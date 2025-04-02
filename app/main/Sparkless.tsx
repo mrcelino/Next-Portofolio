@@ -9,7 +9,7 @@ export default function Sparkles() {
         background="transparent"
         minSize={0.4}
         maxSize={1}
-        particleDensity={20}
+        particleDensity={100}
         className="h-full w-full"
         particleColor="#60AFFF"
       />
