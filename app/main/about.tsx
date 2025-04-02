@@ -1,20 +1,8 @@
-import { SparklesCore } from "../../components/ui/sparkles";
 import PhotoCard from "../ui/photocard";
 
 export default function About() {
   return (
-    <div className="h-full relative w-full bg-black flex flex-col items-center justify-center rounded-md">
-      <div className="w-full absolute inset-0 h-screen">
-        <SparklesCore
-          id="tsparticlesfullpage"
-          background="transparent"
-          minSize={0.4}
-          maxSize={1}
-          particleDensity={50}
-          className="h-full"
-          particleColor="#60AFFF"
-        />
-      </div>
+    <div className="h-full relative w-full flex flex-col items-center justify-center rounded-md">
 
       <div className="max-w-screen-xl px-6 md:px-10 mx-auto" id="about">
         <h1 className="heading mt-20 text-center tracking-wide" data-aos="fade">
@@ -27,7 +15,7 @@ export default function About() {
         >
           {/* Photo Section */}
           <div className="lg:w-1/3 flex justify-center items-center order-1 lg:order-2 mx-auto">
-            <div className="-mt-20 w-4/5 sm:w-1/2 md:w-1/3 lg:w-4/5">
+            <div className="-mt-20 w-full">
               <PhotoCard />
             </div>
           </div>

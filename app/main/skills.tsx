@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { techStack } from "../../data/data";
-import { SparklesCore } from "../../components/ui/sparkles";
 import { BorderBeam } from "../../components/ui/border-beam";
 function TechStack() {
   return (
@@ -39,19 +38,7 @@ function TechStack() {
 
 export default function Skills() {
   return (
-    <div className="h-full relative w-full bg-black flex flex-col items-center justify-center overflow-hidden rounded-md">
-      <div className="w-full absolute inset-0 h-full">
-        <SparklesCore
-          id="tsparticlesfullpagess2"
-          background="transparent"
-          minSize={0.4}
-          maxSize={1}
-          particleDensity={50}
-          className="h-full"
-          particleColor="#60AFFF"
-        />
-      </div>
-
+    <div className="h-full relative w-full flex flex-col items-center justify-center overflow-hidden rounded-md">
       <div className="max-w-screen-xl px-6 md:px-10 mx-auto" id="about">
         <h1
           className="heading mt-20 mb-20 text-center tracking-wide leading-relaxed"

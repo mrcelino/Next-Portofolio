@@ -1,11 +1,8 @@
-// components/ClientCertificate.jsx
+// components/ClientCertificate.tsx
 "use client";
 import { useState, useEffect } from "react";
 import { HoverEffect } from "../../components/ui/card-hover-effect";
-import { SparklesCore } from "../../components/ui/sparkles";
 import { MagicButton } from "../../components/ui/button";
-
-
 
 interface ClientCertificateProps {
   certificates: {
@@ -44,28 +41,15 @@ export default function ClientCertificate({ certificates }: ClientCertificatePro
   }
 
   return (
-    <>
-      <div className="w-full absolute inset-0 h-full z-0">
-        <SparklesCore
-          id="tsparticlesfullpages3"
-          background="transparent"
-          minSize={0.4}
-          maxSize={1}
-          particleDensity={20}
-          className="h-full w-full"
-          particleColor="#60AFFF"
-        />
+    <div className="max-w-9xl mx-auto px-8">
+      <HoverEffect items={displayedProjects} />
+      <div className="flex justify-center mt-10 mb-16">
+        {showMoreButton && !showAll ? (
+          <MagicButton onClick={handleShowMore} title="Show More" />
+        ) : showAll ? (
+          <MagicButton onClick={handleShowLess} title="Show Less" />
+        ) : null}
       </div>
-      <div className="relative z-10 max-w-9xl mx-auto px-8">
-        <HoverEffect items={displayedProjects} />
-        <div className="flex justify-center mt-10 mb-16">
-          {showMoreButton && !showAll ? (
-            <MagicButton onClick={handleShowMore} title="Show More" />
-          ) : showAll ? (
-            <MagicButton onClick={handleShowLess} title="Show Less" />
-          ) : null}
-        </div>
-      </div>
-    </>
+    </div>
   );
 }

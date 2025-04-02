@@ -1,12 +1,8 @@
 "use client";
 import Image from "next/image";
 import { projects } from "../../data/data";
-import React, { useEffect } from "react";
 import { BorderBeam } from "../../components/ui/border-beam";
 import { FaGithub, FaGlobe } from "react-icons/fa";
-import { SparklesCore } from "../../components/ui/sparkles";
-import AOS from "aos";
-import "aos/dist/aos.css";
 
 interface CardProps {
   title: string;
@@ -73,24 +69,9 @@ function Card({ title, desc, image, linkGithub, stack, web }: CardProps) {
 }
 
 export default function Projects() {
-  useEffect(() => {
-    AOS.init();
-  }, []);
 
   return (
-    <div className="relative h-full w-full bg-black flex flex-col items-center justify-center overflow-hidden rounded-md">
-      <div className="w-full absolute inset-0 h-full">
-        <SparklesCore
-          id="tsparticlesfullpages"
-          background="transparent"
-          minSize={0.4}
-          maxSize={1}
-          particleDensity={50}
-          className="h-full"
-          particleColor="#60AFFF"
-        />
-      </div>
-
+    <div className="relative h-full w-full flex flex-col items-center justify-center overflow-hidden rounded-md">
       <div className="max-w-screen-xl px-6 md:px-10 mx-auto" id="about">
         <h1
           className="heading mt-20 text-center tracking-wide leading-relaxed"

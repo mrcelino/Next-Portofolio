@@ -1,5 +1,7 @@
+// app/layout.tsx
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
+import SparklesWrapper from "./main/SparklessWrapper";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -7,7 +9,6 @@ const poppins = Poppins({
   weight: ["400", "700"],
   variable: "--font-poppins",
 });
-
 
 export const metadata: Metadata = {
   title: "Marcel Portofolio",
@@ -19,13 +20,10 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  
   return (
     <html lang="en" className="scroll-smooth">
-      <body
-        className={poppins.variable}
-      >
-        {children}
+      <body className={poppins.variable}>
+        <SparklesWrapper>{children}</SparklesWrapper>
       </body>
     </html>
   );
