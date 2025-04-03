@@ -1,5 +1,5 @@
 "use client";
-import React, { JSX, useState } from "react";
+import React, { JSX, useState, useEffect } from "react";
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "framer-motion";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
@@ -18,15 +18,26 @@ export const FloatingNav = ({
   const { scrollYProgress } = useScroll();
   const [borderVisible, setBorderVisible] = useState(false);
   const [glowIntensity, setGlowIntensity] = useState(3);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useMotionValueEvent(scrollYProgress, "change", (current) => {
     if (typeof current === "number") {
       if (scrollYProgress.get() < 0.05) {
         setBorderVisible(false);
-        setGlowIntensity(3); 
+        setGlowIntensity(3);
       } else {
         setBorderVisible(true);
-        setGlowIntensity(8); 
+        setGlowIntensity(8);
       }
     }
   });
@@ -38,14 +49,15 @@ export const FloatingNav = ({
         animate={{
           opacity: 1,
           y: 0,
-          width: "50%",
+          width: isMobile ? "80%" : "50%",
           backdropFilter: `blur(5px)`,
           boxShadow: `0 0 ${glowIntensity}px 2px rgba(96, 175, 255, 0.5)`,
         }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
         className={cn(
-          "flex fixed top-10 inset-x-0 mx-auto rounded-full bg-[#0A1021]/50 shadow-lg z-[5000] px-8 py-5 items-center justify-center space-x-4",
+          "flex fixed top-10 inset-x-0 mx-auto rounded-full bg-[#0A1021]/50 shadow-lg z-[5000] px-8 py-5 items-center",
           "backdrop-blur-md",
+          isMobile ? "justify-between" : "justify-center space-x-4", // Kondisional justify
           className
         )}
         style={{
